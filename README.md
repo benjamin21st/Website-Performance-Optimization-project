@@ -32,7 +32,7 @@ Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
 ####Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js.
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
@@ -71,3 +71,17 @@ Feeling uninspired by the portfolio? Here's a list of cool portfolios I found af
 * <a href="http://nicoledominguez.com/portfolio/">http://nicoledominguez.com/portfolio/</a>
 * <a href="http://www.roxannecook.com/">http://www.roxannecook.com/</a>
 * <a href="http://www.84colors.com/portfolio.html">http://www.84colors.com/portfolio.html</a>
+
+### Optimizations applied ###
+1. ** Page Speed **
+  1. Compressed and optimized images
+  2. Minimized HTML, CSS, JavaScript code
+  3. Cleared up render blocking code imports
+
+2. ** Framerate **
+  1. Cached some DOM elements in `changePizzaSizes` function call to avoid recalculation
+
+3. ** Using build tools **
+  ** Note: ** Please edit `local_config.js` to adjust development environment.
+  1. Used Gulp to automate tasks like compression, minimization, etc.
+  2. Also used gulp to watch for changes in code source and apply changes directly to output code.
