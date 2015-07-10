@@ -4,6 +4,7 @@ var minifyCss = require('gulp-minify-css');
 var minifyHTML = require('gulp-minify-html');
 var uglify = require('gulp-uglify');
 var localConfig = require('./local_config');
+var jsHint = require('gulp-jshint');
 
 var print = function (p) {
   console.log(p);
@@ -32,7 +33,7 @@ gulp.task('images', function() {
 
 gulp.task('watch', function() {
   gulp.watch(imgSrc, ['images']);
-  gulp.watch(jsSrc, ['js'])
+  gulp.watch(jsSrc, ['js']);
   gulp.watch(cssSrc, ['css']);
 });
 
@@ -48,7 +49,7 @@ gulp.task('html', function() {
     .pipe(gulp.dest(htmlDest));
 });
 
-gulp.task('js', function(){
+gulp.task('js', function() {
   if (localConfig.developmentEnvironment === 'development') {
     return gulp.src(jsSrc)
       .pipe(gulp.dest(jsDest));
